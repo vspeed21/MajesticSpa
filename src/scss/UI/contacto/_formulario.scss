@@ -1,0 +1,66 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.formulario{
+  margin-top: 5rem;
+  max-width: 60rem;
+  margin: 3rem auto;
+
+  fieldset{
+    padding-bottom: 2rem;
+  }
+
+  legend{
+    text-align: center;
+    font-size: 3rem;
+    margin-block: 3rem;
+    font-weight: bold;
+    padding-inline: 1rem;
+  }
+}
+
+.campo{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__label{
+    text-transform: capitalize;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  &__input:not([type="submit"]){
+    outline: none;
+    padding: .5rem 1rem;
+    background-color: rgb(249 250 251);
+    border-radius: .5rem;
+  }
+}
+
+.btn-wrapper{
+  justify-content: center;
+
+  @include m.tablet{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .btn{
+    all: unset;
+    background-color: v.$secundario;
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    border-radius: .5rem;
+    font-size: 1.8rem;
+    transition: all .3s;
+    color: v.$blanco;
+
+    &:hover{
+      cursor: pointer;
+      background-color: darken(v.$secundario, 10%);
+    }
+  }
+}
